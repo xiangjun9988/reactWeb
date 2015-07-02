@@ -1,0 +1,26 @@
+<%- include header.html %>
+<script id="dataScript">
+	// 我的任务数据
+	var  data = {
+	    taskUrl:'/images/task.jpg',
+	    taskImg:'/images/task.jpg',
+	    taskState:0, //0表示失败 1表示中标 2成功
+	    taskTilte:'发单]环球雅思绵阳分校3~5分钟',
+	    taskClass:'',
+	    taskTime:'',
+	    taskIntro:'以环球雅思绵阳分校为中心，创作100字以上的微视频创意',
+	    taskPrice:'300',
+	    Timelist:{
+	    	state:1, //0 1为子状态1 2为子状态2 3为子状态3，
+	    	state1:'4月30日发布',//状态1内容
+	    	state2:'等待结果',//状态2内容
+	    	state3:'6月20日结束',//状态3内容
+	    }
+	}
+</script>
+<aside id="aside"></aside>
+<aside id="aside2"></aside>
+<div id="MyTaskPage">
+    
+</div>
+<%- include footer.html %>

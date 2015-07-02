@@ -1,0 +1,144 @@
+#dialogBox-wp {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998; }
+
+#froms-wp {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20px;
+  min-width: 270px;
+  max-width: 540px;
+  width: 84.375%;
+  min-height: 120px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #444;
+  box-sizing: border-box;
+  z-index: 999;
+  overflow: hidden; }
+  #froms-wp .closeDialog {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    color: #b8b8b8; }
+  #froms-wp form fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0; }
+  #froms-wp form legend {
+    margin: 0;
+    padding-bottom: 15px;
+    text-align: center;
+    width: 100%;
+    font-size: 1.125rem; }
+  #froms-wp form label {
+    clear: both;
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    overflow: hidden; }
+    #froms-wp form label button, #froms-wp form label a {
+      margin-top: 10px;
+      border-radius: 0;
+      background: #3095d1;
+      text-align: center;
+      line-height: 40px;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0 10px;
+      width: 60%;
+      background: #eee;
+      min-width: 136px;
+      height: 38px;
+      border: 1px solid #ccc;
+      color: #333;
+      box-sizing: border-box; }
+    #froms-wp form label div {
+      padding: 0 0 0 10px;
+      width: auto;
+      overflow: hidden; }
+    #froms-wp form label strong {
+      font-size: 0.875rem;
+      color: #999; }
+  #froms-wp form .getAuthCode {
+    margin: 0; }
+  #froms-wp form span {
+    float: left;
+    display: inline-block;
+    width: 26px;
+    height: 40px;
+    font-size: 26px;
+    line-height: 40px;
+    color: #b8b8b8; }
+  #froms-wp form em {
+    float: right;
+    width: 0;
+    overflow: hidden; }
+  #froms-wp form input[type=text], #froms-wp form input[type=password], #froms-wp form input[type=email], #froms-wp form input[type=number] {
+    display: inline-block;
+    padding: 0 10px;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 0; }
+  #froms-wp form .btn {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 0;
+    background: #3095d1;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    text-decoration: none; }
+  #froms-wp form strong {
+    color: #3095d1;
+    font-weight: normal; }
+  #froms-wp form p {
+    margin: 10px 0 15px;
+    word-break: break-all; }
+  #froms-wp #MakeOffer-wp input[type="submit"],
+  #froms-wp #Receiving-wp input[type="submit"] {
+    background: #ef6b74; }
+
+.loading-wp {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center; }
+  .loading-wp p {
+    vertical-align: middle;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin: auto;
+    margin-top: -15px;
+    padding: 5px 10px;
+    width: 110px;
+    background: #fff;
+    border-radius: 50px;
+    border: 1px solid #666;
+    box-shadow: 0 2px 5px #333;
+    font-size: 1rem;
+    color: #666; }
+    .loading-wp p i {
+      margin-right: 5px; }

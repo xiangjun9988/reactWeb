@@ -1,0 +1,5 @@
+module.exports = {
+    GETLOGINUSER: 'GETLOGINUSER',
+    OUTLOGIN:'OUTLOGIN',
+    MYLOVE:'HANDLE_MYLOVE'
+}

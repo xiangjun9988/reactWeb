@@ -1,0 +1,112 @@
+@font-face {
+	font-family: 'weixin';
+	src:url('../../fonts/weixin.eot?3ux6kw');
+	src:url('../../fonts/weixin.eot?#iefix3ux6kw') format('embedded-opentype'),
+		url('../../fonts/weixin.ttf?3ux6kw') format('truetype'),
+		url('../../fonts/weixin.woff?3ux6kw') format('woff'),
+		url('../../fonts/weixin.svg?3ux6kw#weixin') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="wx-"], [class*=" wx-"] {
+	font-family: 'weixin';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.wx-bars:before {
+	content: "\e600";
+}
+.wx-block:before {
+	content: "\e601";
+}
+.wx-Bookmark:before {
+	content: "\e602";
+}
+.wx-Calendar:before {
+	content: "\e603";
+}
+.wx-Clock:before {
+	content: "\e604";
+}
+.wx-clock2:before {
+	content: "\e605";
+}
+.wx-close:before {
+	content: "\e606";
+}
+.wx-cross:before {
+	content: "\e607";
+}
+.wx-dollar:before {
+	content: "\e608";
+}
+.wx-email:before {
+	content: "\e609";
+}
+.wx-fire:before {
+	content: "\e60a";
+}
+.wx-iphone:before {
+	content: "\e60b";
+}
+.wx-key:before {
+	content: "\e60c";
+}
+.wx-like:before {
+	content: "\e60d";
+}
+.wx-Like2:before {
+	content: "\e60e";
+}
+.wx-logo:before {
+	content: "\e60f";
+}
+.wx-map:before {
+	content: "\e610";
+}
+.wx-min_bottom:before {
+	content: "\e611";
+}
+.wx-min_left:before {
+	content: "\e612";
+}
+.wx-min_right:before {
+	content: "\e613";
+}
+.wx-min_top:before {
+	content: "\e614";
+}
+.wx-plane:before {
+	content: "\e615";
+}
+.wx-qq:before {
+	content: "\e616";
+}
+.wx-Search:before {
+	content: "\e617";
+}
+.wx-tick:before {
+	content: "\e618";
+}
+.wx-unlocked:before {
+	content: "\e619";
+}
+.wx-url:before {
+	content: "\e61a";
+}
+.wx-user:before {
+	content: "\e61b";
+}
+.wx-Wallet:before {
+	content: "\e61c";
+}

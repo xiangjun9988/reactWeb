@@ -1,0 +1,57 @@
+<%- include header.html %>
+<script id="dataScript">
+	// 任务例表数据
+	var  data = {
+	    imgUrl : [
+	                {url:"/images/banner.jpg",imgUrl:'/images/banner2.jpg'},
+	                {url:"/images/banner.jpg",imgUrl:'/images/banner3.jpg'},
+	                {url:"/images/banner.jpg",imgUrl:'/images/banner4.gif'}
+	                    ],
+	    navData : [
+			{navUrl:'/public/tasklist/2',navIcon:'/public/images/nav1.svg',navName:'后期剪辑'},
+			{navUrl:'/public/tasklist/3',navIcon:'/public/images/nav2.svg',navName:'摄像'},
+			{navUrl:'/public/tasklist/4',navIcon:'/public/images/nav3.svg',navName:'剧本'},
+			{navUrl:'/public/tasklist/5',navIcon:'/public/images/nav4.svg',navName:'配音'},
+			{navUrl:'/public/tasklist/6',navIcon:'/public/images/nav5.svg',navName:'导演'},
+			{navUrl:'/public/tasklist/7',navIcon:'/public/images/nav6.svg',navName:'演员'},
+			{navUrl:'/public/tasklist/8',navIcon:'/public/images/nav7.svg',navName:'化妆'},
+			{navUrl:'/public/tasklist/9',navIcon:'/public/images/nav8.svg',navName:'灯光'},
+			{navUrl:'/public/tasklist/10',navIcon:'/public/images/nav9.svg',navName:'创意'}
+		],
+	    TaskClass: [
+	                {
+	                    classTitle:'后期剪辑',
+	                    url:'/',
+	                    recommend:[
+	                        {
+	                            taskImg:'/images/recommend.jpg',
+	                            taskUrl:'/TaskPage',
+	                            taskTilte:'发单]环球雅思绵阳分校3~5分钟'
+	                        }
+	                    ],
+	                    TaskList:[
+	                        {
+	                            taskUrl:'/TaskPage',
+	                            taskImg:'/images/task.jpg',
+	                            taskState:0, //0表示结术 1表示进行
+	                            taskTilte:'发单]环球雅思绵阳分校3~5分钟',
+	                            taskIntro:'以环球雅思绵阳分校为中心，创作100字以上的微视频创意',
+	                            taskPrice:'300'
+	                        }
+	                    ]
+	                }
+	            ],
+	     userNav:[
+	        {url:'',icon:'wx-Calendar',newMsg:true,text:'我的任务'},
+	        {url:'',icon:'wx-Wallet',newMsg:true,text:'资金账户'},
+	        {url:'',icon:'wx-Calendar',newMsg:false,text:'公告'},
+	        {url:'',icon:'wx-Like2',newMsg:false,text:'喜欢'}
+	    ]
+	}
+</script>
+<aside id="aside"></aside>
+<aside id="aside2"></aside>
+<div id="TaskListPage">
+    
+</div>
+<%- include footer.html %>

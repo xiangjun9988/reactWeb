@@ -1,0 +1,1282 @@
+@charset "UTF-8";
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+a, input, button {
+  -webkit-tap-highlight-color: transparent; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+li {
+  margin-bottom: 1.25rem; }
+
+.OpenNav {
+  overflow: hidden; }
+  .OpenNav body {
+    overflow: hidden; }
+  .OpenNav .react {
+    overflow: hidden; }
+
+#aside2 {
+  float: right;
+  width: 0; }
+
+#react, #TaskListPage {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  overflow: hidden; }
+
+.container {
+  margin: auto;
+  min-width: 320px;
+  width: 100%; }
+
+.task-wp {
+  position: relative;
+  display: block;
+  padding: 0 0.625rem;
+  height: 6.25rem;
+  text-decoration: none; }
+  .task-wp .task-pic {
+    position: relative;
+    width: 6.25rem;
+    margin-right: .625rem;
+    height: 6.25rem;
+    overflow: hidden;
+    float: left;
+    background: #f0f0f0; }
+    .task-wp .task-pic img {
+      width: 100%;
+      height: auto; }
+  .task-wp .task-state {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; }
+    .task-wp .task-state:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      color: #fff;
+      padding: .1rem;
+      margin: 0.6rem 0 0 -1.3rem;
+      width: 5rem;
+      font-size: 1rem;
+      text-align: center;
+      -webkit-transform: rotateZ(-45deg);
+              transform: rotateZ(-45deg);
+      box-shadow: 0 2px 5px #888; }
+  .task-wp .task-underway:after {
+    content: "进行";
+    background: #37a6f5; }
+  .task-wp .task-end:after {
+    content: "结束";
+    background: #5d5e60; }
+  .task-wp .task-info {
+    height: 100%; }
+  .task-wp .task-title {
+    margin: 0;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    color: #575556;
+    font-weight: bold;
+    font-family: "Helvetica Neue"; }
+  .task-wp .task-intro {
+    margin: .1875rem 0;
+    height: 2.625rem;
+    line-height: 1.5;
+    font-size: .875rem;
+    color: #7a7a7a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; }
+  .task-wp .task-price {
+    display: block;
+    box-sizing: border-box;
+    padding: 0.3125rem 0.625rem;
+    float: right;
+    margin-top: .4rem;
+    border: 1px solid #bfbfbf;
+    line-height: 0.875rem;
+    font-size: 0.875rem;
+    color: #37a6f5;
+    border-radius: .3125rem;
+    text-align: center; }
+
+#taskList .modules dt {
+  display: none; }
+
+#taskList .modules:nth-child(3) dt,
+#taskList .modules:nth-child(4) dt {
+  display: block; }
+
+#taskList p {
+  margin: 0 0.625rem;
+  border-top: 1px solid #ccc;
+  height: 2.8125rem;
+  line-height: 2.8125rem;
+  font-size: 0.875rem;
+  color: #999;
+  text-align: center; }
+
+#header {
+  box-sizing: border-box;
+  position: relative;
+  width: auto;
+  height: 2.8125rem;
+  background: #fff;
+  color: #4BABF8;
+  font-size: 1.5rem; }
+  #header.subpage {
+    background: #F0F0F0;
+    color: #9E9E9E; }
+    #header.subpage img {
+      display: none; }
+    #header.subpage .fr {
+      visibility: hidden; }
+    #header.subpage .fl {
+      padding-top: 0.3125rem; }
+    #header.subpage h1 a {
+      color: #505050;
+      font-size: 1.25rem;
+      text-decoration: none; }
+      #header.subpage h1 a strong {
+        display: block;
+        text-decoration: none; }
+  #header button {
+    display: table-cell;
+    padding: 0 0.625rem;
+    height: 100%;
+    background: transparent;
+    border: none;
+    vertical-align: middle;
+    outline: none; }
+  #header .fl {
+    float: left; }
+  #header .fr {
+    float: right; }
+  #header h1 {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    line-height: 2.8125rem; }
+    #header h1 img {
+      width: 5.625rem; }
+    #header h1 strong {
+      display: none; }
+
+.banner {
+  position: relative;
+  margin-bottom: 1.25rem;
+  min-height: 9.375rem;
+  max-height: 21.5625rem;
+  background: #ccc;
+  overflow: hidden; }
+  .banner .slider-wp {
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%; }
+  .banner .slider-item {
+    display: block;
+    float: left;
+    width: 320px; }
+    .banner .slider-item img {
+      display: block;
+      width: 100%;
+      height: auto; }
+  .banner .slider-points {
+    position: absolute;
+    bottom: 0.625rem;
+    width: 100%;
+    text-align: center; }
+    .banner .slider-points i {
+      display: inline-block;
+      width: 0.625rem;
+      height: 0.625rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5); }
+      .banner .slider-points i + i {
+        margin-left: 0.625rem; }
+      .banner .slider-points i.active {
+        background: #fff; }
+
+.recommend-wp {
+  padding: 0 0.625rem; }
+  .recommend-wp.two a {
+    float: left;
+    width: 48%; }
+    .recommend-wp.two a:last-child {
+      float: right; }
+
+.recommend {
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 1.25rem;
+  width: 100%;
+  max-height: 12.5rem;
+  overflow: hidden; }
+  .recommend img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .recommend .task-title {
+    box-sizing: border-box;
+    position: absolute;
+    padding: 0 0.625rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    color: #fff;
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: -webkit-linear-gradient(top, transparent, #000);
+    background: linear-gradient(top, transparent, #000); }
+
+.modules {
+  margin: 0; }
+  .modules dt {
+    padding: 0 0.625rem;
+    margin: 0 0 0.625rem; }
+  .modules h2 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 1.5;
+    border-bottom: 1px solid #ccc; }
+    .modules h2 a {
+      color: #333;
+      text-decoration: none; }
+    .modules h2 .wx-min_bottom {
+      float: right;
+      height: 100%;
+      color: #cacaca;
+      font-size: .75rem;
+      line-height: 1.75rem; }
+  .modules dd {
+    margin: 0; }
+
+.navigation-wp {
+  position: relative;
+  overflow: hidden; }
+  .navigation-wp nav {
+    width: 20rem;
+    overflow: hidden; }
+    .navigation-wp nav:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .navigation-wp a {
+    float: left;
+    display: table-cell;
+    width: 5rem;
+    overflow: hidden;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: center; }
+  .navigation-wp dl {
+    display: inline-block;
+    margin: 0; }
+  .navigation-wp dt {
+    padding: 0;
+    width: 3.75rem;
+    height: 3.75rem;
+    overflow: hidden; }
+  .navigation-wp img {
+    width: 100%; }
+  .navigation-wp dd {
+    font-size: 0.875rem;
+    color: #565656; }
+  .navigation-wp .nav-points {
+    margin-top: 0.625rem;
+    clear: both;
+    width: 100%;
+    text-align: center;
+    line-height: 0.625rem; }
+    .navigation-wp .nav-points i {
+      display: inline-block;
+      width: 0.625rem;
+      height: 0.625rem;
+      border-radius: 50%;
+      background: rgba(191, 189, 189, 0.5); }
+      .navigation-wp .nav-points i + i {
+        margin-left: 0.625rem; }
+      .navigation-wp .nav-points i.active {
+        background: #bfbdbd; }
+
+.footer > div {
+  padding: .625rem;
+  background: #f1f1f1;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 3px #bfbfbf; }
+  .footer > div dl {
+    margin: 0 0 1.25rem; }
+  .footer > div dt {
+    padding: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ef6b74; }
+  .footer > div dd {
+    font-size: 0.875rem;
+    color: #4b4b4b;
+    line-height: 1.5; }
+  .footer > div p {
+    margin: 0; }
+
+.footer ul {
+  position: relative;
+  margin: 0 0.625rem 1.25rem;
+  padding: 1.25rem;
+  background: #ef6b74;
+  border-radius: 1.25rem;
+  font-size: 0.875rem;
+  color: #fff;
+  list-style: none; }
+  .footer ul:before, .footer ul:after {
+    position: absolute;
+    z-index: -1;
+    top: -1.25rem;
+    content: '';
+    width: 1.25rem;
+    height: 2rem;
+    background: #ef6b74; }
+  .footer ul:before {
+    left: 20%; }
+  .footer ul:after {
+    right: 20%; }
+
+.footer li {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: bold; }
+  .footer li strong {
+    margin-right: 0.625rem; }
+
+.footer > p {
+  padding: 0.625rem;
+  margin: 0 0.625rem;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  font-size: 0.75rem;
+  color: #b0b0b0; }
+  .footer > p span {
+    display: block; }
+  .footer > p strong {
+    display: inline-block;
+    font-weight: normal;
+    border-top: 1px solid #ccc; }
+  .footer > p img {
+    display: inline-block;
+    width: 5.625rem; }
+
+.search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #fff;
+  height: 100%; }
+  .search .fl {
+    float: left;
+    display: none; }
+  .search .fr {
+    float: right; }
+  .search form {
+    box-sizing: border-box;
+    padding: 0.3125rem;
+    height: 2.8125rem;
+    background: #38393c; }
+    .search form > button {
+      margin-left: .625rem;
+      width: 3.75rem;
+      height: 2.1875rem !important;
+      background: #252627 !important;
+      border-radius: 0.3125rem;
+      color: #797979;
+      font-size: 0.875rem;
+      border: none; }
+  .search .search-input {
+    padding: 0 2.5rem 0 0.625rem;
+    position: relative;
+    display: block;
+    height: 2.1875rem;
+    overflow: hidden;
+    background: #c7c4c4;
+    border-radius: 0.3125rem;
+    font-size: 0.875rem;
+    line-height: 2.1875rem; }
+    .search .search-input input {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      outline: none; }
+    .search .search-input button {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0.625rem;
+      margin: auto;
+      color: #252627;
+      font-size: 1.5rem;
+      padding: .3125rem 0 0 0;
+      background: none;
+      border: none;
+      outline: none; }
+  .search ul {
+    margin: 0;
+    overflow-y: scroll; }
+  .search a {
+    display: block;
+    color: #797979;
+    text-decoration: none; }
+  .search li {
+    padding: 0 0.625rem;
+    margin: 0;
+    height: 2.8125rem;
+    line-height: 2.8125rem;
+    font-size: 1rem;
+    background: #f0f0f0;
+    border-bottom: 1px solid #c1c1c1;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .search li span {
+      margin-right: 0.625rem; }
+    .search li .wx-fire {
+      color: #ef6c74; }
+
+#task {
+  background: #f0f0f0; }
+  #task .userInfo-wp {
+    display: none; }
+  #task.stateZhong .banner {
+    margin: 0; }
+  #task.stateZhong .userInfo-wp {
+    display: block; }
+  #task.stateZhong .taskState-wp {
+    background: #5c5b5b; }
+    #task.stateZhong .taskState-wp h3:before {
+      border-left-color: #5c5b5b; }
+  #task.stateZhong .offerBtn-wp button {
+    background: -webkit-linear-gradient(top, #989898, #5c5b5b);
+    background: linear-gradient(top, #989898, #5c5b5b); }
+  #task.stateUnfinished .taskState-wp {
+    background: #5c5b5b; }
+    #task.stateUnfinished .taskState-wp h3:before {
+      border-left-color: #5c5b5b; }
+    #task.stateUnfinished .taskState-wp h2:after {
+      display: block; }
+  #task.stateUnfinished .offerBtn-wp button {
+    background: -webkit-linear-gradient(top, #989898, #5c5b5b);
+    background: linear-gradient(top, #989898, #5c5b5b); }
+  #task.stateEnd .taskState-wp {
+    background: #5c5b5b; }
+    #task.stateEnd .taskState-wp h3:before {
+      border-left-color: #5c5b5b; }
+  #task.stateEnd .offerBtn-wp button {
+    background: -webkit-linear-gradient(top, #989898, #5c5b5b);
+    background: linear-gradient(top, #989898, #5c5b5b); }
+
+.taskState-wp {
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 1.25rem;
+  padding: 0 0.625rem;
+  width: 100%;
+  height: 4.375rem;
+  background: #37a6f5; }
+  .taskState-wp div {
+    width: 100%;
+    height: 100%;
+    display: table;
+    text-align: center;
+    overflow: hidden; }
+  .taskState-wp h2, .taskState-wp h3 {
+    position: relative;
+    display: table-cell;
+    margin: 0;
+    height: 100%;
+    vertical-align: middle; }
+  .taskState-wp h3 {
+    font-size: 1rem;
+    color: #fff;
+    width: 5rem;
+    line-height: 1.5; }
+    .taskState-wp h3 strong {
+      display: block;
+      border-bottom: 1px solid #fff;
+      font-size: 1.25rem; }
+    .taskState-wp h3 span {
+      font-weight: normal; }
+  .taskState-wp h3:before, .taskState-wp h3:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 2.1875rem 1.8rem; }
+  .taskState-wp h3:before {
+    right: -3.531rem;
+    border-left-color: #37a6f5;
+    z-index: 2; }
+  .taskState-wp h3:after {
+    right: -4.5rem;
+    border-width: 2.6973rem 2.22rem;
+    border-left-color: #f0f0f0;
+    z-index: 1; }
+  .taskState-wp h2 {
+    padding: 0 0.625rem 0 2.8125rem;
+    background: #fff;
+    font-size: 1.125rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; }
+    .taskState-wp h2:after {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: .625rem;
+      z-index: 2;
+      content: '';
+      margin: auto;
+      width: 3.75rem;
+      height: 3.75rem;
+      background: url(../images/Unfinished.png) center no-repeat;
+      background-size: 100%; }
+
+.taskIntro-wp {
+  box-sizing: border-box;
+  margin: 0 0.625rem 1.25rem;
+  padding: 0 0.625rem;
+  background: #fff;
+  line-height: 1.5; }
+  .taskIntro-wp h4 {
+    text-align: center;
+    margin: 0;
+    padding: 1.25rem 0; }
+    .taskIntro-wp h4 strong {
+      position: relative;
+      margin-left: -0.9375rem;
+      padding-left: 0.625rem;
+      float: left;
+      width: 5rem;
+      height: 1.875rem;
+      line-height: 1.875rem;
+      background: #fe435a;
+      font-size: 1.125rem;
+      color: #fff; }
+      .taskIntro-wp h4 strong:before {
+        position: absolute;
+        left: 0;
+        top: -0.375rem;
+        content: '';
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 0.2rem;
+        border-bottom-color: #c52737;
+        border-right-color: #c52737; }
+    .taskIntro-wp h4 button {
+      float: right;
+      padding: 0;
+      height: 1.875rem;
+      line-height: 1.875rem;
+      border: none;
+      background: none;
+      color: #fe435a;
+      font-size: 1.5rem;
+      outline: none; }
+  .taskIntro-wp #task-info {
+    padding-bottom: 1.25rem; }
+
+.otherExplain-wp {
+  margin: 0 0.625rem 1.25rem;
+  padding: 1.25rem 0.625rem;
+  background: #fff;
+  line-height: 1.5; }
+  .otherExplain-wp h5 {
+    margin: 0;
+    font-size: 1.125rem; }
+  .otherExplain-wp div {
+    color: #525252; }
+
+.contactUs-wp {
+  margin: 0 0 1.25rem;
+  padding: 0 0.625rem;
+  list-style-type: none; }
+  .contactUs-wp li {
+    margin: 0 0 0.3125rem;
+    padding: 0 0.625rem;
+    line-height: 1.5;
+    font-size: 0.875rem;
+    color: #777777; }
+  .contactUs-wp a {
+    display: inline-block;
+    width: 4.6875rem;
+    height: 1.5625rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 0.3125rem;
+    background: -webkit-linear-gradient(top, #67bdfa, #3aa6f2);
+    background: linear-gradient(top, #67bdfa, #3aa6f2);
+    vertical-align: super; }
+
+.offerBtn-wp {
+  padding: 1.25rem 0.625rem;
+  background: #fff; }
+  .offerBtn-wp button {
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    height: 2.8125rem;
+    background: -webkit-linear-gradient(top, #ff3c5c, #fd5353);
+    background: linear-gradient(top, #ff3c5c, #fd5353);
+    border-radius: 0.625rem;
+    border: none;
+    text-align: center;
+    line-height: 2.8125rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px #ccc; }
+
+.userInfo-wp {
+  height: 5rem;
+  padding: .625rem;
+  margin-bottom: 1.25rem;
+  background: #fff; }
+  .userInfo-wp .uImg {
+    float: left;
+    margin-right: .625rem;
+    width: 5rem;
+    height: 5rem; }
+    .userInfo-wp .uImg img {
+      display: block;
+      width: 100%; }
+  .userInfo-wp .uInfo {
+    position: relative;
+    overflow: hidden;
+    height: 100%; }
+    .userInfo-wp .uInfo h2 {
+      margin: 0 0 0.625rem 0;
+      font-size: 1.25rem;
+      color: #333333;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    .userInfo-wp .uInfo span {
+      font-size: 1rem;
+      color: #999999;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    .userInfo-wp .uInfo:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: .625rem;
+      z-index: 2;
+      content: '';
+      margin: auto;
+      width: 3.75rem;
+      height: 3.75rem;
+      background: url(../images/zhong.png) center no-repeat;
+      background-size: 100%; }
+
+#userSide-wp {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 14.6875rem;
+  height: 100%;
+  background: #151618;
+  box-shadow: -0.625rem 0 0.9375rem #0c0c0d inset;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+  #userSide-wp.yes .userInfo button {
+    display: none; }
+  #userSide-wp.yes .userInfo h2,
+  #userSide-wp.yes .userInfo span {
+    display: block; }
+  #userSide-wp.yes > button {
+    display: block; }
+  #userSide-wp .userInfo {
+    padding: 1.25rem 0.625rem; }
+    #userSide-wp .userInfo .uImg {
+      float: left;
+      margin-right: 0.625rem;
+      width: 3.75rem;
+      height: 3.75rem;
+      background: #fff;
+      border: 0.1875rem solid #4BABF8;
+      border-radius: 50%;
+      overflow: hidden; }
+    #userSide-wp .userInfo img {
+      width: 100%; }
+    #userSide-wp .userInfo .uInfo {
+      display: table-cell;
+      width: 12.5rem;
+      height: 4.125rem;
+      vertical-align: middle;
+      text-align: center;
+      color: #fff; }
+    #userSide-wp .userInfo span {
+      display: none;
+      margin: 0;
+      text-align: left;
+      color: #999; }
+    #userSide-wp .userInfo h2 {
+      display: none;
+      margin: 0;
+      text-align: left;
+      font-size: 16px;
+      font-weight: normal; }
+    #userSide-wp .userInfo button {
+      width: 5.8125rem;
+      height: 2.0625rem;
+      border: 0.0625rem solid #4BABF8;
+      color: #4BABF8;
+      border-radius: 3.125rem;
+      background: none;
+      line-height: 2.0625rem;
+      text-decoration: none; }
+  #userSide-wp ul {
+    margin: 0 0 1.25rem; }
+    #userSide-wp ul li {
+      margin: 0; }
+    #userSide-wp ul a {
+      display: block;
+      padding: 0 0.625rem;
+      height: 2.8125rem;
+      line-height: 2.8125rem;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.25rem;
+      -webkit-tap-highlight-color: rgba(75, 171, 248, 0.5); }
+    #userSide-wp ul span {
+      margin-right: 0.625rem; }
+    #userSide-wp ul strong {
+      position: relative;
+      font-weight: normal; }
+    #userSide-wp ul .newMsg:after {
+      content: '';
+      position: absolute;
+      right: -0.625rem;
+      top: 0.25rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      background: #fd364d;
+      border-radius: 50%; }
+  #userSide-wp > button {
+    display: none;
+    margin: auto;
+    width: 12.1875rem;
+    height: 2.8125rem;
+    background: none;
+    border: 1px solid #3f4148;
+    border-radius: 0.625rem;
+    line-height: 2.8125rem;
+    color: #3f4148;
+    outline: none; }
+
+.capital-wp div {
+  padding: 1.25rem 0.625rem;
+  border-bottom: 1px solid #999;
+  font-size: 1.25rem;
+  color: #333; }
+  .capital-wp div strong {
+    color: #E8525B; }
+
+.capital-wp p {
+  padding: 0.625rem;
+  margin: 0;
+  font-size: 0.875rem;
+  color: #999; }
+
+.notice-wp {
+  padding: 0 0.625rem; }
+  .notice-wp .title {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #bdbdbd; }
+    .notice-wp .title h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #333;
+      font-weight: normal; }
+    .notice-wp .title span {
+      font-size: 14px;
+      color: #bdbdbd; }
+  .notice-wp #content {
+    margin: 1.25rem 0;
+    line-height: 1.5; }
+
+#noticeList ul {
+  margin: 0; }
+
+#noticeList li {
+  margin: 0;
+  border-bottom: 0.0625rem solid #bdbdbd; }
+
+.noticeList-wp a {
+  display: block;
+  padding: 1.25rem 0.625rem;
+  text-decoration: none; }
+
+.noticeList-wp h2 {
+  margin: 0;
+  padding-right: 3.125rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1rem;
+  font-weight: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+  .noticeList-wp h2 strong {
+    margin-right: -3.125rem;
+    float: right;
+    font-size: 0.875rem; }
+
+.noticeList-wp strong {
+  display: block;
+  color: #999;
+  font-weight: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.875rem; }
+
+#LoveList ul {
+  margin: 0;
+  list-style-type: none;
+  overflow: hidden; }
+
+#LoveList li {
+  margin: 0; }
+
+.messageList-wp {
+  position: relative;
+  height: 5.625rem;
+  -webkit-transition: opacity 3s ease-in;
+          transition: opacity 3s ease-in; }
+  .messageList-wp a {
+    margin: auto;
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    padding: 1.25rem 0.625rem;
+    text-decoration: none;
+    border-bottom: 0.0625rem solid #bdbdbd;
+    background: #fff; }
+  .messageList-wp .message-pic {
+    float: left;
+    margin-right: 0.625rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    overflow: hidden; }
+    .messageList-wp .message-pic img {
+      width: 100%; }
+  .messageList-wp .message-info {
+    height: 100%; }
+    .messageList-wp .message-info h2 {
+      margin: 0;
+      padding-right: 3.125rem;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1rem;
+      font-weight: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+      .messageList-wp .message-info h2 strong {
+        margin-right: -3.125rem;
+        float: right;
+        font-size: 0.875rem; }
+    .messageList-wp .message-info strong {
+      display: block;
+      height: 1.5625rem;
+      color: #999;
+      font-weight: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 0.875rem; }
+    .messageList-wp .message-info em {
+      position: absolute;
+      right: 0.625rem;
+      bottom: 1.25rem;
+      float: right;
+      display: block;
+      width: 1.125rem;
+      height: 1.125rem;
+      border-radius: 50%;
+      background: red;
+      color: #fff;
+      text-align: center;
+      line-height: 1.125rem;
+      font-size: 0.75rem;
+      font-style: normal; }
+
+#MessagePage li {
+  padding: 0 0.625rem; }
+
+#msgInfoPage ul {
+  margin: 0 0 1.25rem 0; }
+
+#msgInfoPage li {
+  margin: 0;
+  padding: 0 0.625rem; }
+
+.msgInfoList-wp h2 {
+  padding: 1.25rem;
+  margin: 0;
+  text-align: center;
+  display: block;
+  color: #999;
+  font-weight: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.875rem;
+  clear: both; }
+
+.msgInfoList-wp .msgInfoList-pic {
+  float: left;
+  margin-right: 1.25rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  overflow: hidden; }
+  .msgInfoList-wp .msgInfoList-pic img {
+    width: 100%; }
+
+.msgInfoList-wp .msgInfoList-info {
+  position: relative;
+  display: inline-block;
+  padding: 0.625rem;
+  width: 13rem;
+  min-height: 1.875rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff; }
+  .msgInfoList-wp .msgInfoList-info:before {
+    position: absolute;
+    top: 0.9375rem;
+    left: -1.3125rem;
+    content: '';
+    border-width: 0.625rem;
+    border-style: solid;
+    border-color: transparent;
+    border-right-color: #ccc; }
+  .msgInfoList-wp .msgInfoList-info:after {
+    position: absolute;
+    top: 0.9375rem;
+    left: -1.21rem;
+    content: '';
+    border-width: 0.625rem;
+    border-style: solid;
+    border-color: transparent;
+    border-right-color: #fff; }
+  .msgInfoList-wp .msgInfoList-info strong {
+    display: block;
+    color: #999;
+    font-weight: normal;
+    font-size: 1rem; }
+
+.loveList-wp {
+  position: relative;
+  height: 5.625rem; }
+  .loveList-wp a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 3;
+    box-sizing: border-box;
+    width: 100%;
+    height: 5.625rem;
+    display: block;
+    padding: 1.25rem 0.625rem;
+    text-decoration: none;
+    border-bottom: 0.0625rem solid #bdbdbd;
+    background: #fff; }
+  .loveList-wp .love-pic {
+    float: left;
+    margin-right: 0.625rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    overflow: hidden; }
+    .loveList-wp .love-pic img {
+      width: 100%; }
+  .loveList-wp .love-info {
+    position: relative;
+    height: 100%; }
+    .loveList-wp .love-info h2 {
+      margin: 0;
+      padding-right: 3.125rem;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1rem;
+      font-weight: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+      .loveList-wp .love-info h2 strong {
+        margin-right: -3.125rem;
+        float: right;
+        font-size: 0.875rem; }
+    .loveList-wp .love-info strong {
+      display: block;
+      color: #999;
+      font-weight: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 0.875rem; }
+  .loveList-wp button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 5.625rem;
+    height: 5.5625rem;
+    border: none;
+    background: #e8525b;
+    color: #fff; }
+
+.myTaskList-wp {
+  position: relative;
+  margin-bottom: 1.25rem;
+  overflow: hidden; }
+  .myTaskList-wp .userInfo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: auto;
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center; }
+    .myTaskList-wp .userInfo .uImg {
+      position: relative;
+      margin: 0 auto;
+      width: 3.75rem;
+      height: 3.75rem;
+      z-index: 2;
+      background: #fff;
+      border: .1875rem solid #4BABF8;
+      border-radius: 50%; }
+      .myTaskList-wp .userInfo .uImg:before {
+        position: absolute;
+        top: -1.5625rem;
+        left: -5.9375rem;
+        z-index: -1;
+        content: '';
+        width: 6.25rem;
+        height: 6.25rem;
+        background: url("../images/userTask.png") center no-repeat;
+        background-size: 100%; }
+      .myTaskList-wp .userInfo .uImg img {
+        border-radius: 50%; }
+    .myTaskList-wp .userInfo h2 {
+      margin: 0;
+      font-size: 1rem;
+      color: #fff;
+      font-weight: normal; }
+    .myTaskList-wp .userInfo span {
+      margin: 0;
+      color: #afcbf4;
+      font-size: 0.875rem; }
+  .myTaskList-wp img {
+    display: block;
+    width: 100%;
+    height: auto; }
+
+#myTask.zhong .taskState {
+  background: #30C842; }
+
+#myTask.success .taskState {
+  background: #E8525B; }
+  #myTask.success .taskState strong {
+    display: none; }
+
+#myTask.failure .taskState {
+  background: #464F76; }
+  #myTask.failure .taskState strong {
+    display: none; }
+
+.myTask-wp .taskState {
+  display: table;
+  padding: 1.25rem 0;
+  width: 100%;
+  height: 6.25rem;
+  background: #464F76;
+  text-align: center;
+  color: #fff; }
+  .myTask-wp .taskState h2 {
+    display: table-cell;
+    margin: 0;
+    width: 100%;
+    height: 6.25rem;
+    font-size: 1.5rem;
+    vertical-align: middle;
+    font-weight: normal; }
+  .myTask-wp .taskState i {
+    font-size: 2.5rem;
+    margin-right: 0.3125rem;
+    vertical-align: middle; }
+  .myTask-wp .taskState strong {
+    display: block;
+    font-weight: normal;
+    font-size: 0.875rem; }
+
+.myTask-wp .taskTilte {
+  padding: 1.25rem 0.625rem;
+  border-bottom: 0.0625rem solid #999; }
+  .myTask-wp .taskTilte h3 {
+    margin: 0;
+    font-size: 1.125rem;
+    color: #333; }
+  .myTask-wp .taskTilte .info {
+    margin-right: 0.625rem;
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: normal; }
+  .myTask-wp .taskTilte em {
+    color: #ef6c74;
+    font-style: normal; }
+
+.myTask-wp .taskInfo {
+  margin: 0;
+  padding: 1.25rem 0.625rem;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5; }
+
+.myTask-wp .time {
+  margin: 0;
+  padding: 0 0.625rem 1.25rem; }
+  .myTask-wp .time.state1 li:first-child:before, .myTask-wp .time.state1 li:first-child:after {
+    background: #30C842; }
+  .myTask-wp .time.state1 li:first-child strong {
+    background: #30C842; }
+    .myTask-wp .time.state1 li:first-child strong:after {
+      border-right-color: #30C842; }
+  .myTask-wp .time.state1 li:last-child:after {
+    background: #999; }
+  .myTask-wp .time.state2 li:before, .myTask-wp .time.state2 li:after {
+    background: #30C842; }
+  .myTask-wp .time.state2 li strong {
+    background: #30C842; }
+    .myTask-wp .time.state2 li strong:after {
+      border-right-color: #30C842; }
+  .myTask-wp .time.state2 li:last-child:before, .myTask-wp .time.state2 li:last-child:after {
+    background: #999; }
+  .myTask-wp .time.state2 li:last-child strong {
+    background: #999; }
+    .myTask-wp .time.state2 li:last-child strong:after {
+      border-right-color: #999; }
+  .myTask-wp .time.state3 li:before, .myTask-wp .time.state3 li:after {
+    background: #30C842; }
+  .myTask-wp .time.state3 li strong {
+    background: #30C842; }
+    .myTask-wp .time.state3 li strong:after {
+      border-right-color: #30C842; }
+  .myTask-wp .time li {
+    position: relative;
+    margin: 0;
+    padding-left: 1.875rem;
+    min-height: 6.25rem; }
+    .myTask-wp .time li:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      content: '';
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background: #999;
+      z-index: 3; }
+    .myTask-wp .time li:after {
+      position: absolute;
+      margin-top: 3.125rem;
+      left: 0.25rem;
+      top: 0;
+      content: '';
+      width: 0.25rem;
+      height: 99%;
+      background: #999; }
+    .myTask-wp .time li:nth-child(2):after {
+      height: 0; }
+    .myTask-wp .time li:last-child:after {
+      margin-top: -3.125rem; }
+    .myTask-wp .time li strong {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      padding: 1.25rem;
+      min-width: 116px;
+      height: 1.25rem;
+      background: #999;
+      border-radius: 0.625rem;
+      line-height: 1.25rem;
+      font-size: 1rem;
+      color: #fff; }
+      .myTask-wp .time li strong:after {
+        position: absolute;
+        content: '';
+        left: -1.25rem;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        margin: auto;
+        border-width: 0.625rem;
+        border-style: solid;
+        border-color: transparent;
+        border-right-color: #999; }
