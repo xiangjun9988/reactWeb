@@ -16,7 +16,7 @@ export default class Loading extends React.Component {
                     {display:loadingInfo.isShow ? 'block' : 'none'}
             }>
                 <p>
-                    {loadingInfo.LoadingText}
+                <strong>{loadingInfo.LoadingText}</strong>
                 </p>
             </div>
             );

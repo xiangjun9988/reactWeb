@@ -13,8 +13,6 @@ var Search = React.createClass({
 			}
 		}
 	},
-	componentWillMount: function(){
-	},
 	componentDidMount: function(){
 		this.setState({
 			searchStyle:{
@@ -29,11 +27,12 @@ var Search = React.createClass({
 		$.post(url,data,function(data){
 			var data = data;
 			if(data == ''){
-				data=[{url:"#","icon":"","Text":"没有更多内容了！"}];
+				alert('没有内容了！');
+				return;
 			}
 			this.setState({
 				searchInfo:this.state.searchInfo.concat(data),
-				page: data=='' ? this.state.page+1 : 1
+				page: data=='' ? 1 : this.state.page+1
 			});
 		}.bind(this))
 	},
@@ -48,6 +47,7 @@ var Search = React.createClass({
 	},
 	handleSubmit: function(e){
 		e.preventDefault();
+		if(this.state.contents==''){return;}
 		var data ={
 			key:this.state.contents,
 			page:this.state.page

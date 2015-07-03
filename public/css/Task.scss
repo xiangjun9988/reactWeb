@@ -677,12 +677,12 @@ li{
 		border-width:2.1875rem 1.8rem;;
 	}
 	h3:before{
-		right:-3.531rem;
+		right:-3.6rem;
 		border-left-color:#37a6f5;
 		z-index:2;
 	}
 	h3:after{
-		right: -4.5rem;
+		right: -4.45rem;
 		border-width: 2.6973rem 2.22rem;
 		border-left-color: #f0f0f0;
 		z-index: 1;
@@ -798,6 +798,7 @@ li{
 		border-radius:0.3125rem;
 		background: linear-gradient(top, #67bdfa, #3aa6f2);
 		vertical-align: super;
+		line-height: 1.5625rem;
 	}
 }
 

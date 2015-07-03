@@ -22744,7 +22744,11 @@
 	                _react2['default'].createElement(
 	                    'p',
 	                    null,
-	                    loadingInfo.LoadingText
+	                    _react2['default'].createElement(
+	                        'strong',
+	                        null,
+	                        loadingInfo.LoadingText
+	                    )
 	                )
 	            );
 	        }
@@ -22856,9 +22860,14 @@
 			});
 			document.getElementsByTagName('html')[0].className = this.state.isShowUSide ? '' : 'OpenNav';
 			document.getElementById('react').style.transition = '-webkit-transform 300ms ease';
-			document.getElementById('react').style.webkitTransform = this.state.isShowUSide ? 'translate3d(0px, 0px, 0px)' : 'translate3d(235px, 0px, 0px)';
-			document.getElementById('react').style.mozTransform = this.state.isShowUSide ? 'translate3d(0px, 0px, 0px)' : 'translate3d(235px, 0px, 0px)';
+			document.getElementById('react').style.webkitTtransition = '-webkit-transform 300ms ease';
 			document.getElementById('react').style.transform = this.state.isShowUSide ? 'translate3d(0px, 0px, 0px)' : 'translate3d(235px, 0px, 0px)';
+			document.getElementById('react').style.webkitTransform = this.state.isShowUSide ? 'translate3d(0px, 0px, 0px)' : 'translate3d(235px, 0px, 0px)';
+			setTimeout((function () {
+				if (!this.state.isShowUSide) {
+					document.getElementById('react').removeAttribute('style');
+				}
+			}).bind(this), 300);
 		},
 		_ShowState: function _ShowState() {
 			document.getElementsByTagName('html')[0].className = 'OpenNav';
@@ -22924,7 +22933,6 @@
 				}
 			};
 		},
-		componentWillMount: function componentWillMount() {},
 		componentDidMount: function componentDidMount() {
 			this.setState({
 				searchStyle: {
@@ -22939,11 +22947,12 @@
 			$.post(url, data, (function (data) {
 				var data = data;
 				if (data == '') {
-					data = [{ url: '#', 'icon': '', 'Text': '没有更多内容了！' }];
+					alert('没有内容了！');
+					return;
 				}
 				this.setState({
 					searchInfo: this.state.searchInfo.concat(data),
-					page: data == '' ? this.state.page + 1 : 1
+					page: data == '' ? 1 : this.state.page + 1
 				});
 			}).bind(this));
 		},
@@ -22958,6 +22967,9 @@
 		},
 		handleSubmit: function handleSubmit(e) {
 			e.preventDefault();
+			if (this.state.contents == '') {
+				return;
+			}
 			var data = {
 				key: this.state.contents,
 				page: this.state.page
@@ -24305,56 +24317,61 @@
 	* @Author: hexiao-o
 	* @Date:   2015-06-06 20:50:15
 	* @Last Modified by:   anchen
-	* @Last Modified time: 2015-06-07 23:35:56
+	* @Last Modified time: 2015-07-03 15:41:07
 	*/
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(1);
 	// 消息例表
 	var MessageList = React.createClass({
-	    displayName: "MessageList",
+	  displayName: 'MessageList',
 
-	    render: function render() {
-	        return React.createElement(
-	            "div",
-	            { className: "messageList-wp clearfix" },
+	  render: function render() {
+	    var msgInfo = this.props.msgInfo;
+
+	    var styles = {
+	      display: msgInfo.msgSum > 0 ? 'block' : 'none'
+	    };
+	    return React.createElement(
+	      'div',
+	      { className: 'messageList-wp clearfix' },
+	      React.createElement(
+	        'a',
+	        { href: msgInfo.msgUrl },
+	        React.createElement(
+	          'div',
+	          { className: 'message-pic' },
+	          React.createElement('img', { src: msgInfo.msgImg })
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'message-info' },
+	          React.createElement(
+	            'h2',
+	            null,
+	            msgInfo.msgTitle,
 	            React.createElement(
-	                "a",
-	                { href: this.props.msgInfo.msgUrl },
-	                React.createElement(
-	                    "div",
-	                    { className: "message-pic" },
-	                    React.createElement("img", { src: this.props.msgInfo.msgImg })
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "message-info" },
-	                    React.createElement(
-	                        "h2",
-	                        null,
-	                        this.props.msgInfo.msgTitle,
-	                        React.createElement(
-	                            "strong",
-	                            null,
-	                            this.props.msgInfo.msgTime
-	                        )
-	                    ),
-	                    React.createElement(
-	                        "strong",
-	                        null,
-	                        this.props.msgInfo.msgText,
-	                        " "
-	                    ),
-	                    React.createElement(
-	                        "em",
-	                        null,
-	                        this.props.msgInfo.msgSum
-	                    )
-	                )
+	              'strong',
+	              null,
+	              msgInfo.msgTime
 	            )
-	        );
-	    }
+	          ),
+	          React.createElement(
+	            'strong',
+	            null,
+	            msgInfo.msgText,
+	            ' '
+	          ),
+	          React.createElement(
+	            'em',
+	            { style: styles },
+	            msgInfo.msgSum
+	          )
+	        )
+	      )
+	    );
+	  }
 	});
 
 	module.exports = MessageList;

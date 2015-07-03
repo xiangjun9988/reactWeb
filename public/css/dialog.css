@@ -124,21 +124,23 @@
   background: rgba(0, 0, 0, 0.3);
   text-align: center; }
   .loading-wp p {
-    vertical-align: middle;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    margin: auto;
-    margin-top: -15px;
-    padding: 5px 10px;
-    width: 110px;
-    background: #fff;
-    border-radius: 50px;
-    border: 1px solid #666;
-    box-shadow: 0 2px 5px #333;
-    font-size: 1rem;
-    color: #666; }
+    float: left;
+    position: relative;
+    top: 45%;
+    left: 50%; }
+    .loading-wp p strong {
+      vertical-align: middle;
+      position: relative;
+      left: -50%;
+      margin: auto;
+      padding: 5px 10px;
+      background: #fff;
+      border-radius: 50px;
+      border: 1px solid #666;
+      box-shadow: 0 2px 5px #333;
+      font-size: 1rem;
+      color: #666;
+      font-weight: normal;
+      line-height: 2; }
     .loading-wp p i {
       margin-right: 5px; }

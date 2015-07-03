@@ -23,9 +23,14 @@ var Header = React.createClass({
 		});
 		document.getElementsByTagName('html')[0].className=this.state.isShowUSide ? '' : "OpenNav";
 		document.getElementById('react').style.transition = '-webkit-transform 300ms ease';
-		document.getElementById('react').style.webkitTransform = this.state.isShowUSide ? 'translate3d(0px, 0px, 0px)' : 'translate3d(235px, 0px, 0px)';
-		document.getElementById('react').style.mozTransform = this.state.isShowUSide ? 'translate3d(0px, 0px, 0px)' : 'translate3d(235px, 0px, 0px)';
+		document.getElementById('react').style.webkitTtransition = '-webkit-transform 300ms ease';
 		document.getElementById('react').style.transform = this.state.isShowUSide ? 'translate3d(0px, 0px, 0px)' : 'translate3d(235px, 0px, 0px)';
+		document.getElementById('react').style.webkitTransform = this.state.isShowUSide ? 'translate3d(0px, 0px, 0px)' : 'translate3d(235px, 0px, 0px)';
+		setTimeout(function(){
+			if(!this.state.isShowUSide){
+				document.getElementById('react').removeAttribute('style');
+			}
+		}.bind(this),300);
 	},
 	_ShowState: function(){
         document.getElementsByTagName('html')[0].className="OpenNav";
